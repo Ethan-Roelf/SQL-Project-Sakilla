@@ -3,7 +3,7 @@ This project transforms raw transactional data from the **Sakila DVD Rental data
 
 ---
 
-## Key Business Use Cases
+## How this project added value to the business
 * **Talent Management:** Automated identification of high-performing actors (>25 films) for marketing campaigns.
 * **Revenue Leakage Audit:** Identified "Ghost Rentals" (unreturned items) and standardized missing data for stakeholder reporting.
 * **Customer Segmentation:** Implemented logic-driven loyalty tiers (Elite, Premium, Standard) based on rental frequency.
