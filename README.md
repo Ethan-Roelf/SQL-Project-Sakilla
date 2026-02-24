@@ -1,6 +1,3 @@
-# SQL-Project-Sakilla
-# Sakila Operational & Analytics Layer (SOIA)
-
 ## Project Overview
 This project transforms raw transactional data from the **Sakila DVD Rental database** into a high-performance analytical layer. I have designed this to simulate a real-world Data Engineering workflow, bridging the gap between raw backend tables and executive-level Business Intelligence (BI) requirements.
 
