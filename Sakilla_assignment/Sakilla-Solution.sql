@@ -23,10 +23,10 @@ GROUP BY a.actor_id, a.first_name, a.last_name
 HAVING COUNT(fa.film_id) > 25;
 
 /* Decision: Why INNER JOIN vs. SUBQUERY?
-Alternative: We could use a subquery in the WHERE clause (WHERE actor_id IN (...)).
+Alternative: We could use a subquery in the WHERE clause (WHERE actor_id IN ()).
 Production Benefit: The INNER JOIN with GROUP BY is generally more efficient for the 
 optimizer when aggregating counts across large sets. It allows the engine to 
-perform a hash join rather than executing a subquery for every row in the 'actor' table.
+perform a hash join rather than executing a subquery for every row in the actor table.
 */
 
 -- 3. Data Cleanup
@@ -41,7 +41,7 @@ PART 2: THE REVENUE LEAKAGE AUDIT
 Focus: Joins, Null Handling, and Anti-Joins
 */
 
--- 4. The Unreturned Inventory Report
+-- 4. Inventory Report
 SELECT 
     c.email, 
     f.title, 
@@ -142,9 +142,9 @@ the YEAR() as an integer and adding 1 is computationally cheaper than performing
 full date arithmetic, which involves calculating leap years and month lengths.
 */
 
-/*
-Focus: Advanced Window Functions
-*/
+
+-- Focus: Advanced Window Functions
+
 
 -- 10. Store Leaderboard
 SELECT * FROM (
@@ -162,9 +162,10 @@ SELECT * FROM (
 WHERE performance_rank <= 5;
 
 /* Decision: Why RANK() vs. ROW_NUMBER()?
-Alternative: ROW_NUMBER() OVER (...).
-Production Benefit: In a business "Leaderboard," if two movies earned exactly 
+Alternative: ROW_NUMBER() OVER ().
+Production Benefit: In a business Leaderboard, if two movies earned exactly 
 the same amount, they should both be ranked #1. RANK() allows for ties, 
 whereas ROW_NUMBER() would arbitrarily pick one to be #1 and the other #2, 
 leading to inaccurate business reporting.
 */
+
