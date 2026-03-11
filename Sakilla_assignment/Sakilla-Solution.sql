@@ -9,7 +9,7 @@ CREATE TABLE reporting_actor_performance (
     full_name VARCHAR(255),
     load_date DATETIME,
     PRIMARY KEY (actor_id)
-);
+); 
 
 -- 2. Data Population
 INSERT INTO reporting_actor_performance (actor_id, full_name, load_date)
@@ -168,4 +168,5 @@ the same amount, they should both be ranked #1. RANK() allows for ties,
 whereas ROW_NUMBER() would arbitrarily pick one to be #1 and the other #2, 
 leading to inaccurate business reporting.
 */
+
 
